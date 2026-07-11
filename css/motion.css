@@ -7,15 +7,15 @@
 }
 
 @keyframes loadingFlicker {
-  0%, 10% { opacity: 1; filter: none; }
-  11%, 16% { opacity: .05; filter: brightness(2.8); }
-  17%, 31% { opacity: 1; filter: none; }
-  32%, 37% { opacity: .05; filter: brightness(2.8); }
-  38%, 52% { opacity: 1; filter: none; }
-  53%, 58% { opacity: .06; filter: brightness(2.55); }
-  59%, 70% { opacity: 1; filter: none; }
-  71%, 77% { opacity: .04; filter: brightness(3); }
-  78%, 100% { opacity: 1; filter: none; }
+  0%, 11% { opacity: 1; filter: none; }
+  12%, 15% { opacity: .05; filter: brightness(2.8); }
+  16%, 29% { opacity: 1; filter: none; }
+  30%, 33% { opacity: .05; filter: brightness(2.8); }
+  34%, 47% { opacity: 1; filter: none; }
+  48%, 51% { opacity: .06; filter: brightness(2.55); }
+  52%, 65% { opacity: 1; filter: none; }
+  66%, 70% { opacity: .04; filter: brightness(3); }
+  71%, 100% { opacity: 1; filter: none; }
 }
 
 @keyframes screenIn {

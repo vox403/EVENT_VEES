@@ -1,0 +1,125 @@
+.modal-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, .76);
+  backdrop-filter: blur(10px);
+}
+
+.modal-layer.is-active {
+  display: grid;
+  animation: fadeIn .18s ease both;
+}
+
+.result-modal {
+  width: min(420px, 100%);
+  padding: 23px;
+  border: 1px solid var(--accent);
+  background: #0a0a0d;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .68), 0 0 38px var(--accent-soft);
+}
+
+.result-modal h2 {
+  margin: 6px 0 0;
+  font-size: 26px;
+  letter-spacing: -.05em;
+}
+
+.result-summary {
+  margin: 15px 0 18px;
+  padding: 11px 13px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.result-modal label {
+  display: block;
+  margin-bottom: 7px;
+  color: rgba(255, 255, 255, .68);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.result-modal input {
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  outline: 0;
+  background: #030304;
+  color: #fff;
+}
+
+.result-modal input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.form-message {
+  min-height: 16px;
+  margin: 6px 0 0;
+  color: var(--danger);
+  font-size: 10px;
+}
+
+.modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.ghost-button,
+.primary-button {
+  min-height: 41px;
+  padding: 9px 13px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.primary-button {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #050505;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.primary-button:disabled,
+.ghost-button:disabled {
+  cursor: wait;
+  opacity: .5;
+}
+
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 34px;
+  z-index: 300;
+  max-width: min(340px, calc(100vw - 32px));
+  padding: 10px 13px;
+  border: 1px solid var(--accent);
+  background: #0b0b0d;
+  color: #fff;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, .55);
+  font-size: 11px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

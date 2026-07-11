@@ -29,7 +29,7 @@
     const render = progress => {
       const value = Math.min(100, Math.floor(progress));
       const stage = getStage(value);
-      const flickering = value >= 74 && value < 90;
+      const flickering = value >= 78 && value < 90;
 
       percent.textContent = `${value}%`;
       fill.style.width = `${value}%`;

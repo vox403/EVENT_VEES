@@ -1,10 +1,10 @@
 (() => {
   const scope = window.VCAM || (window.VCAM = {});
 const STAGES = [
-  { at: 0, image: "assets/2.png", status: "CAMERA SIGNAL SEARCHING" },
-  { at: 30, image: "assets/2-1.png", status: "SUBJECT DATA SYNCHRONIZING" },
-  { at: 60, image: "assets/2-2.png", status: "INTERACTIVE FEED CONNECTING" },
-  { at: 90, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
+  { time: 0, image: "assets/2.png", status: "CAMERA SIGNAL SEARCHING" },
+  { time: 620, image: "assets/2-1.png", status: "SUBJECT DATA SYNCHRONIZING" },
+  { time: 1420, image: "assets/2-2.png", status: "INTERACTIVE FEED CONNECTING" },
+  { time: 2480, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
 ];
 
 function startLoading(onComplete) {
@@ -19,16 +19,16 @@ function startLoading(onComplete) {
   let currentImage = art.getAttribute("src");
   let finished = false;
 
-  const getStage = progress => {
+  const getStage = elapsed => {
     for (let index = STAGES.length - 1; index >= 0; index -= 1) {
-      if (progress >= STAGES[index].at) return STAGES[index];
+      if (elapsed >= STAGES[index].time) return STAGES[index];
     }
     return STAGES[0];
   };
 
-  const render = progress => {
+  const render = (elapsed, progress) => {
     const value = Math.min(100, Math.floor(progress));
-    const stage = getStage(value);
+    const stage = getStage(elapsed);
     percent.textContent = `${value}%`;
     fill.style.width = `${value}%`;
     bar.setAttribute("aria-valuenow", String(value));
@@ -43,7 +43,7 @@ function startLoading(onComplete) {
   const finish = () => {
     if (finished) return;
     finished = true;
-    render(100);
+    render(duration, 100);
     artWrap.classList.add("is-flickering");
     window.setTimeout(() => {
       screen.classList.remove("is-active");
@@ -54,9 +54,10 @@ function startLoading(onComplete) {
 
   const startedAt = performance.now();
   const step = now => {
-    const progress = Math.min(1, (now - startedAt) / duration);
+    const elapsed = Math.min(duration, now - startedAt);
+    const progress = elapsed / duration;
     const eased = 1 - Math.pow(1 - progress, 2.15);
-    render(eased * 100);
+    render(elapsed, eased * 100);
     if (progress === 1) finish();
     else requestAnimationFrame(step);
   };

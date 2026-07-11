@@ -4,7 +4,7 @@
     { at: 0, image: "assets/2.png", status: "CAMERA SIGNAL SEARCHING" },
     { at: 30, image: "assets/2-1.png", status: "SUBJECT DATA SYNCHRONIZING" },
     { at: 60, image: "assets/2-2.png", status: "INTERACTIVE FEED CONNECTING" },
-    { at: 90, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
+    { at: 78, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
   ];
 
   function startLoading(onComplete) {

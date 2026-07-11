@@ -4,7 +4,7 @@
     { at: 0, image: "assets/2.png", status: "CAMERA SIGNAL SEARCHING" },
     { at: 30, image: "assets/2-1.png", status: "SUBJECT DATA SYNCHRONIZING" },
     { at: 60, image: "assets/2-2.png", status: "INTERACTIVE FEED CONNECTING" },
-    { at: 95, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
+    { at: 90, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
   ];
 
   function startLoading(onComplete) {
@@ -29,7 +29,7 @@
     const render = progress => {
       const value = Math.min(100, Math.floor(progress));
       const stage = getStage(value);
-      const flickering = value >= 80 && value < 95;
+      const flickering = value >= 74 && value < 90;
 
       percent.textContent = `${value}%`;
       fill.style.width = `${value}%`;

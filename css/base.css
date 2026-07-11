@@ -1,0 +1,60 @@
+:root {
+  --bg: #050505;
+  --panel: #0b0b0d;
+  --line: rgba(255, 255, 255, .14);
+  --muted: rgba(255, 255, 255, .54);
+  --text: #f6f6f7;
+  --accent: #e8e8e8;
+  --accent-soft: rgba(232, 232, 232, .16);
+  --danger: #ff315e;
+  --shadow: 0 20px 64px rgba(0, 0, 0, .48);
+  color-scheme: dark;
+  font-family: Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+button,
+.character-card,
+.target-heart,
+.rhythm-stage,
+.puzzle-tile {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body[data-theme="vox"] {
+  --accent: #33d9ff;
+  --accent-soft: rgba(51, 217, 255, .18);
+}
+
+body[data-theme="vel"] {
+  --accent: #ff5acf;
+  --accent-soft: rgba(255, 90, 207, .18);
+}
+
+body[data-theme="val"] {
+  --accent: #ff405f;
+  --accent-soft: rgba(255, 64, 95, .18);
+}
+

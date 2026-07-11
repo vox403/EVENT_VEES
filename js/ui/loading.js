@@ -10,6 +10,10 @@
     "assets/2.png",
     "assets/2-3.png",
     "assets/2.png",
+    "assets/2-3.png",
+    "assets/2.png",
+    "assets/2-3.png",
+    "assets/2.png",
     "assets/2-3.png"
   ];
 
@@ -22,7 +26,7 @@
     const fill = document.getElementById("loadingBarFill");
     const status = document.getElementById("loadingStatus");
     const duration = 3800;
-    const flickerStart = 94;
+    const flickerStart = 95;
     const flickerEnd = 99;
     let currentImage = art.getAttribute("src");
     let finished = false;

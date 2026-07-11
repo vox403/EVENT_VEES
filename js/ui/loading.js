@@ -4,7 +4,7 @@ const STAGES = [
   { time: 0, image: "assets/2.png", status: "CAMERA SIGNAL SEARCHING" },
   { time: 620, image: "assets/2-1.png", status: "SUBJECT DATA SYNCHRONIZING" },
   { time: 1420, image: "assets/2-2.png", status: "INTERACTIVE FEED CONNECTING" },
-  { time: 2480, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
+  { time: 2200, image: "assets/2-3.png", status: "CONNECTION ESTABLISHED" }
 ];
 
 function startLoading(onComplete) {
